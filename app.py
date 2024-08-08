@@ -17,10 +17,14 @@ def exibir_opcoes():
     print('3. Ativar restaurante')
     print('4. Sair\n')
 
+def opcao_invalida():
+    print('Opção invalida\n')
+    input('Digite uma tecla para voltar ao menu principal')
+    main()
+    
 def escolher_opcoes():
     opcao_escolhida = int(input('Escolha uma opção:'))
     #opcao_escolhida = int(opcao_escolhida)
-
     match opcao_escolhida:
         case 1:
             print('Cadastrar restaurantes')
@@ -31,8 +35,7 @@ def escolher_opcoes():
         case 4:
             finalizar_app()
         case _:
-            print('Opção inválida!')
-            finalizar_app()
+            opcao_invalida()
 
 def finalizar_app():
     os.system('clear')
@@ -40,6 +43,7 @@ def finalizar_app():
     exit()
 
 def main():
+    os.system('clear') # função que limpa a tela do terminal
     exibir_nome_do_programa() # função que controla o projeto
     exibir_opcoes()
     escolher_opcoes()

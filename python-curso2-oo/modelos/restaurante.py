@@ -5,7 +5,7 @@ class Restaurante:
         self.ativo = False
 
     def __str__(self):
-        return self.nome
+        return f'{self.nome} | {self.categoria}'
 
 
 restaurante_praca = Restaurante('Praça', 'Gourmet')

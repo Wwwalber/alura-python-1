@@ -1,17 +1,11 @@
 class Musica:
-    nome = ''
-    artista = ''
-    duracao = int
+    def __init__(self, nome='', artista='', duracao=0,):
+        self.nome = nome
+        self.artista = artista
+        self.duracao = duracao
 
-musica1 = Musica()
-musica1.nome = 'Bohemian Rhapsody'
-musica1.artista = 'Queen'
-musica1.duracao = 45
-
-musica2 = Musica()
-musica2.nome = 'Jazz'
-musica2.artista = 'Beatles'
-musica2.duracao = 30
+musica1 = Musica(nome='musica1', artista='artista1', duracao=50)
+musica2 = Musica(nome='musica2', artista='artista2', duracao=45)
 
 # Acessando os atributos de cada objeto
 print(f'Nome: {musica1.nome}, Artista: {musica1.artista}, Duração: {musica1.duracao} minutos')

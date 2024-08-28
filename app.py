@@ -56,6 +56,24 @@ def listar_restaurantes():
 
     voltar_ao_menu_principal()
 
+def alternar_estado_restaurante():
+    exibir_subtitulo('Alterando estado do restaurante')
+    nome_restaurante = input('Digite o nome do restaurante que deseja mudar o estado ')
+    restaurante_encontrado = False
+
+    for restaurante_loop in restaurantes:
+        if nome_restaurante == restauranteloop['nome']:
+            restaurante_encontrado = True
+            restaurante_loop['ativo'] = not restaurante_loop['ativo'] # inverte o valor false/true
+            # mas queremos que exiba somente quando estiver inativo
+            # podemos usar a condiçã TERNARIA
+            mensagem = f'O estado do restaurante {nome_restaurante} foi ativado com sucesso!' if restaurante_loop['ativo'] else f'O restaurante {nome_restaurante} foi desativado com sucesso!'
+            print(mensagem)
+    if not restaurante_encontrado_loop:
+        print('Nenhum restaurante encontrado')
+
+    voltar_ao_menu_principal()
+
 def exibir_subtitulo(texto):
     os.system('clear')
     print(texto)
@@ -70,7 +88,7 @@ def escolher_opcoes():
         case 2:
             listar_restaurantes()
         case 3:
-            print('Ativar restaurantes')
+            alternar_estado_restaurante()
         case 4:
             finalizar_app()
         case _:

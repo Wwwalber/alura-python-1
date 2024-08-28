@@ -1,11 +1,11 @@
 class Restaurante:
-    def __init__(self, nome, categoria):
-        self.nome = nome # self objeto que está vindo. Referencia do objeto que está chamendo
-        self.categoria = categoria
-        self.ativo = False
+    def __init__(this, nome, categoria):
+        this.nome = nome # this objeto que está vindo. Referencia do objeto que está chamendo
+        this.categoria = categoria
+        this.ativo = False
 
-    def __str__(self):
-        return f'{self.nome} | {self.categoria}'
+    def __str__(this):
+        return f'{this.nome} | {this.categoria}'
 
 
 restaurante_praca = Restaurante('Praça', 'Gourmet')

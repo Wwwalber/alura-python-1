@@ -1,37 +1,20 @@
 class Restaurante:
-    def __ini__(self, nome, categoria):
-        self.nome = ''
-        self.categoria = ''
+    def __init__(self, nome, categoria):
+        self.nome = nome # self objeto que está vindo
+        self.categoria = categoria
         self.ativo = False
 
-restaurante_praca = Restaurante()
-restaurante_praca.nome = 'Praca'
-restaurante_praca.categoria = 'Gourmet'
+restaurante_praca = Restaurante('Praça', 'Gourmet')
 
-restaurante_pizza = Restaurante()
+restaurante_pizza = Restaurante('Pizza', 'italiana')
 
 restaurantes = [restaurante_praca, restaurante_pizza]
 
 # mostra métdos especiais que todas as classes possuem
-print(dir(restaurante_praca))
 
-
-restaurante_praca.categoria = 'Italiana'
 print(vars(restaurante_praca))
+print(vars(restaurante_pizza))
 
-print(restaurante_praca.categoria)
-print(restaurante_praca.ativo)
-
-restaurante_praca.nome = 'Bistro'
-print(restaurante_praca.nome)
-
-restaurante_pizza = Restaurante()
-restaurante_pizza.nome = 'Pizza Place'
-restaurante_pizza.categoria = 'Fast Food'
-restaurante_pizza.ativo = 'Ativo'
-print(f'Restaurante:', {restaurante_pizza.nome})
-print(f'Categoria:', {restaurante_pizza.categoria})
-print(f'Ativo:', {restaurante_pizza.ativo})
 
 
 

@@ -5,16 +5,20 @@ class Pessoa:
         self.profissao = profissao
 
     def __str__(self):
-        return f'{self.nome}'
+        return f'{self.nome}, {self.idade} anos, {self.profissao}'
 
-    @classmethod
-    def aniversario(cls):
+
+    def aniversario(self):
         self.idade += 1
 
     @property
     def saudacao(self):
         return f'Olá {self.nome}, parabéns por ser {self.profissao}'
 
-pessoa1 = Pessoa('Walber', 39,'Programador')
+pessoa1 = Pessoa(nome='Alice', idade=25, profissao='Engenheira')
+print("Informações Iniciais:")
+print(pessoa1)
 pessoa1.aniversario()
-pessoa1.saudacao()
+print(pessoa1.saudacao)
+print("Informações após aniversário:")
+print(pessoa1)

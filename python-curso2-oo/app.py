@@ -5,10 +5,11 @@ restaurante_mexicano = Restaurante('Mexican', 'mexicana')
 #restaurante_japones = Restaurante('Japa', 'Japonesa')
 
 def main():
-    Restaurante.listar_restaurantes()
     restaurante_mexicano.alternar_estado()
     restaurante_mexicano.receber_avaliacao('Walber', 8)
     restaurante_mexicano.receber_avaliacao('Elizâ', 9)
+    restaurante_mexicano.receber_avaliacao('Israel', 7)
+    restaurante_mexicano.receber_avaliacao('Israele', 5)
     Restaurante.listar_restaurantes()
 
 

@@ -17,7 +17,10 @@ class ContaBancaria:
     @property
     def titular(self):
         return self._titular
-
+    @property
+    def saldo(self):
+        return self._saldo
+        
 conta1 = ContaBancaria('Walber Costa',0)
 conta1.ativa_conta()
 print(conta1)

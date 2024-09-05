@@ -32,9 +32,9 @@ class Livro:
         else:
             return 'Status - Emprestado'
     
-    @classmethod
-    def verificar_disponibilidade(cls, publicado_em):
+    @staticmethod
+    def verificar_disponibilidade(publicado_em):
         print(f'Relação de livros publicados em {publicado_em}:')
-        for livro in cls.livros:
+        for livro in Livro.livros:
             if livro.ano_publicacao == publicado_em:
-                print(f' -{livro.titulo} | {livro.status_livro}') 
+                print(f' - {livro.titulo} | {livro.status_livro}') 

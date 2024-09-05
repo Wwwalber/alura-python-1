@@ -9,7 +9,7 @@ class Livro:
         Livro.livros.append(self)
 
     def __str__(self):
-        return f'{self.titulo}, de {self.autor}, publicado em {self.ano_publicacao}'
+        return f'- {self.titulo}, de {self.autor}, publicado em {self.ano_publicacao}'
 
     def emprestar(self):
         if self.disponivel == True:
@@ -34,7 +34,7 @@ class Livro:
     
     @staticmethod
     def verificar_disponibilidade(publicado_em):
-        print(f'Relação de livros publicados em {publicado_em}:')
-        for livro in Livro.livros:
-            if livro.ano_publicacao == publicado_em:
-                print(f' - {livro.titulo} | {livro.status_livro}') 
+        #print(f'Relação de livros publicados em {publicado_em}:')
+        livros_disponiveis = [livro for livro in Livro.livros if livro.ano_publicacao == publicado_em and livro.disponivel]
+        return livros_disponiveis 
+

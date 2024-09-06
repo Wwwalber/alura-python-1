@@ -28,13 +28,15 @@ class Restaurante:
         self._ativo = not self._ativo
 
     def receber_avaliacao(self, cliente, nota):
+        if nota > 5:
+            nota = int(input('Informe uma nota de 0 a 5\n'))
         avaliacao = Avaliacao(cliente, nota)
         self._avaliacao.append(avaliacao)
 
     @property # par ser capaz de ler as informações
     def media_avaliacoes(self):
         if not self._avaliacao:
-            return 0
+            return 'Sem avaliação'
         soma_das_notas = sum(avaliacao._nota for avaliacao in self._avaliacao)
         quantidade_de_notas = len(self._avaliacao)
         media = round(soma_das_notas/quantidade_de_notas, 1) # exibir uma casa decimal

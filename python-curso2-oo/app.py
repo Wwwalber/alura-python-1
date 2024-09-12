@@ -6,10 +6,10 @@ restaurante_mexicano = Restaurante('Mexican', 'mexicana')
 
 def main():
     restaurante_mexicano.alternar_estado()
-    '''restaurante_mexicano.receber_avaliacao('Walber', 8)
-    restaurante_mexicano.receber_avaliacao('Elizâ', 9)
-    restaurante_mexicano.receber_avaliacao('Israel', 7)
-    restaurante_mexicano.receber_avaliacao('Israele', 5)'''
+    restaurante_mexicano.receber_avaliacao('Walber', 5)
+    restaurante_mexicano.receber_avaliacao('Elizâ', 4)
+    restaurante_mexicano.receber_avaliacao('Israel', 3)
+    restaurante_mexicano.receber_avaliacao('Israele', 5)
     Restaurante.listar_restaurantes()
 
 

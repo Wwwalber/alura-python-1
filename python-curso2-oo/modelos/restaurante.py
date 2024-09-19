@@ -1,4 +1,5 @@
 from modelos.avaliacao import Avaliacao
+from modelos.cardapio.item_cardapio import ItemCardapio
 class Restaurante:
     """ representa um restaurante e suas características """
 
@@ -18,6 +19,8 @@ class Restaurante:
         self._ativo = False # _ infoma que o atributo está protegidom, embora não privado
         self._avaliacao = [] # para armazena várias
         Restaurante.restaurantes.append(self)
+        self._cardapio = []  # Initialize cardapio as an empty list
+
 
     def __str__(self):
         """ Retorna uma representação string do restaurante """
@@ -66,4 +69,14 @@ class Restaurante:
         media = round(soma_das_notas/quantidade_de_notas, 1) # exibir uma casa decimal
         return media
 
-
+    def adicionar_no_cardapio(self, item):
+        if isinstance(item, ItemCardapio):
+            self._cardapio.append(item)
+    
+    @property
+    def exibir_cardapio(self):
+        print(f'Cardápio do restaurante {self._nome}\n')
+        """ exibir a lista usando enumeração """
+        for i, item in enumerate(self._cardapio, start=1):
+            mensagem = f'{i}. {item._nome} | R${item._preco}'
+            print(mensagem)

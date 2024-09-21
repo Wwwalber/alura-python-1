@@ -13,7 +13,7 @@ def main():
     #print(bebida_suco)
     #print(prato_paozinho)
     restaurante_praca.listar_restaurantes()
-    restaurante_praca.exibir_cardapio()
+    restaurante_praca.exibir_cardapio
     
 
 if __name__ == '__main__':

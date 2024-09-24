@@ -7,3 +7,6 @@ class Prato(ItemCardapio):  # informa que vai herdar métodos, atributos de uma 
 
     def __str__(self):
         return self._nome
+
+    def aplicar_desconto(self):
+        self._preco -= (self._preco * 0.08)

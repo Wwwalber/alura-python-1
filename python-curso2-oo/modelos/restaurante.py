@@ -78,5 +78,9 @@ class Restaurante:
         print(f'Cardápio do restaurante {self._nome}\n')
         """ exibir a lista usando enumeração """
         for i, item in enumerate(self._cardapio, start=1):
-            mensagem = f'{i}. {item._nome} | Preço: R$ {item._preco}'
-            print(mensagem)
+            if hasattr(item, 'descricao'):
+                mensagem_prato = f'{i}. {item._nome} | Preço: R$ {item._preco} | Descricao: {item.descricao}'
+                print(mensagem_prato)
+            else:
+                mensagem_bebida = f'{i}. {item._nome} | Preço: R$ {item._preco} | Tamanho: {item.tamanho}'
+                print(mensagem_bebida)
